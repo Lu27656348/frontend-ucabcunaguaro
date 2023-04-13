@@ -1,3 +1,5 @@
+import { domain_url_env } from '../../config.js';
+
 export const obtenerExternos = async () => {
   const resExternos = await fetch(domain_url_env+'/Externos/');
   const externos = await resExternos.json();

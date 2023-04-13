@@ -1,3 +1,5 @@
+import { domain_url_env } from '../../config.js';
+
 export const insertarEstudiantes = async (estudiante) =>{
   const insertar = await fetch(domain_url_env+'/Estudiantes',{
       method: 'POST',
