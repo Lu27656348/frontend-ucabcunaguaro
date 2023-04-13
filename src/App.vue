@@ -56,7 +56,7 @@ const moverLogin = () => {
         >
       </li>
       <li class="navbar__list__element">
-        <router-link to="/consejo"
+        <router-link to="/designarJurado"
           ><ion-icon name="people-outline"></ion-icon> Consejo</router-link
         >
       </li>
