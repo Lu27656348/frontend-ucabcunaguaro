@@ -11,8 +11,8 @@ import * as revisores from './api/revisor.js';
 import * as cde from './api/cde.js';
 import { async } from '@firebase/util';
 
-import { domain_url_env } from '../config.js';
-
+import { domain_url_env } from '../../src/config.js';
+console.log(domain_url_env)
 //const bcrypt = require("bcrypt")
 
 const ronda = 10;
