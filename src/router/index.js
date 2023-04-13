@@ -9,7 +9,7 @@ const router = createRouter({
     { path: '/committee', name: 'comittee', component: ()=> import('../views/committee.vue') },
     { path: '/reviewers', name: 'reviewers', component: ()=> import('../views/reviewers.vue') },
     { path: '/reviewers_evaluation', name: 'reviewers_evaluation', component: ()=> import('../views/reviewers_evaluation.vue') },
-    { path: '/consejo', name: 'consejo', component: import('../views/consejo.vue') },
+    { path: '/consejo', name: 'consejo', component: ()=> import('../views/consejo.vue') },
     { path: '/assignment', name: 'assignment', component: ()=> import('../views/assignment.vue') },
     { path: '/designarJurado', name: 'designarJurado', component: ()=> import('../views/jury.vue') },
     { path: '/evaluacionNotas', name: 'evaluacionNotas', component: ()=> import('../views/noteUpload.vue') },
