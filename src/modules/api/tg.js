@@ -1,3 +1,4 @@
+import {domain_url_env} from '../../config.js'
 export const obtenerTG = async () => {
   const resTG = await fetch(domain_url_env+'/TG/');
   const tg = await resTG.json();
