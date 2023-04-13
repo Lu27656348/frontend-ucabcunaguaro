@@ -1,0 +1,84 @@
+.navbar {
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  width: 13%;
+  height: 100%;
+
+  background-color: #494748;
+  transition: 0.2s;
+  overflow-x: hidden;
+  img {
+    margin-top: 25px;
+    width: 88px;
+    height: 100px;
+    object-fit: contain;
+    transition: all 0.2s;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    height: 90%;
+
+    margin-top: 10px;
+    list-style: none;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    transition: all 0.2s;
+
+    &::-webkit-scrollbar {
+      appearance: none;
+    }
+
+    &::-webkit-scrollbar:vertical {
+      width: 10px;
+    }
+
+    &::-webkit-scrollbar:horizontal {
+      height: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #797979;
+      border-radius: 20px;
+      border: 2px solid #f1f2f3;
+    }
+
+    &::-webkit-scrollbar-track {
+      border-radius: 10px;
+    }
+
+    &__element {
+      display: flex;
+      align-items: center;
+      height: 55px;
+      width: 100%;
+      border-bottom: 1px #fff solid;
+      transition: 0.2s;
+
+      a {
+        display: flex;
+        align-items: center;
+        color: #fff;
+        text-decoration: none;
+        transition: all 0.2s;
+        ion-icon{
+          width: 20px;
+          height: 20px;
+          padding-right: 5px;
+        }
+      }
+
+      &:hover {
+        transform: scale(1.04);
+        transition: all 0.2s;
+      }
+
+    }
+  }
+}

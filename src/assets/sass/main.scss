@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+@import './abstracts/_variables.scss';
+
+@import './base/_typography.scss';
+
+@import './components/navbar';
+@import './components/loginform';
+@import './components/record';
+@import './components/create-state';
+@import './components/planillaRequest';
+
+@import './pages/router';
+@import'./pages/app';
+@import './pages/login';
+@import './pages/request';

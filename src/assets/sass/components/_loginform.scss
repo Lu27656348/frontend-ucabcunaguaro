@@ -1,0 +1,105 @@
+@use '../abstracts/variables';
+
+.login__form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  padding: 15px;
+
+  //width: variables.$px-w-lg-form;
+  //height: variables.$px-h-lg-form;
+
+  border-radius: 10px;
+
+  background-color: variables.$c-bc-lg;
+
+  &--msg {
+    color: variables.$c-h2;
+  }
+
+  &__mail,
+  &__password {
+
+    margin-top: 10px;
+
+    h2 {
+      margin-top: 40px;
+      opacity: 1;
+      text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    input {
+      margin: variables.$px-mrg-input;
+      padding: variables.$px-pdd-input;
+      width: variables.$px-w-input;
+      height: variables.$px-h-input;
+
+      border-radius: 10px;
+      border: none;
+
+      font-size: variables.$px-txt-input;
+
+      appearance: none;
+      background-color: variables.$c-input-lg;
+    }
+  }
+
+  &__btn {
+    appearance: none;
+    margin: variables.$px-mrg-btn;
+    padding: variables.$px-pdd-btn;
+
+    border-radius: 10px;
+    border: none;
+
+    width: variables.$px-w-btn;
+    height: variables.$px-h-btn;
+
+    background-color: variables.$c-h1;
+    color: variables.$c-input-lg;
+    font-size: variables.$px-txt-btn;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.02);
+      box-shadow: 5px 5px 15px black;
+    }
+
+    &:active {
+      background-color: variables.$c-input-lg;
+      color: variables.$c-h1;
+    }
+
+    transition: 0.2s;
+  }
+
+  &__btn.succes {
+    background-color: variables.$c-btn-sc;
+  }
+
+  &__btn.cancel {
+    background-color: variables.$c-btn-cc;
+  }
+
+  &__action{
+    display: flex;
+    width: 100%;
+    button{
+      width: 100%;
+    }
+  }
+
+  &--forget {
+    margin: 30px;
+
+    text-decoration: underline;
+    font-size: variables.$px-txt-a;
+    font-weight: variables.$px-txt-w-a;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+@use '../abstracts/variables';
+
+.request__container__display__list__record {
+
+  margin: 5px;
+  padding: 5px;
+
+  width: 90%;
+  border-radius: 10px;
+
+  transition: all ease 0.2s;
+
+  &:hover{
+    cursor: pointer;
+    transform: scale(1.02);
+  }
+  &:active{
+    transform: scale(1.00);
+  }
+  &:nth-child(2n){
+    background-color: variables.$c-bc-record1;
+  }
+  &:nth-child(2n+1){
+    background-color: variables.$c-bc-record2;
+  }
+  p{
+    margin: 5px;
+  }
+}
