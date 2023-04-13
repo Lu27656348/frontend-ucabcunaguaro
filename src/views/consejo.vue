@@ -7,7 +7,6 @@ import { FormularioCartaDesigancion } from "../modules/classes/formularioCartaDe
 
 let data = reactive([]);
 let dataConsejo = reactive([]);
-
 let tutor = reactive({
   apellidos: "",
   cargo: "",
@@ -27,6 +26,8 @@ let cde = reactive({
   observaciones : ""
 });
 console.log("GOKLA")
+console.log(import.meta.env.BASE_URL);
+
 let formularioPropuesta = ref(new PropuestaTg());
 
 const clickenComponente = async (id) => {
