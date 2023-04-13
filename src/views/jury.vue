@@ -47,9 +47,8 @@ let notificacion = ref({
 });
 
 const designarJurado = async (profesores, id_tg) => {
-
-  const jurado1 = await api.obtenerProfesorByCedula(profesoresDesignados[0].value);
-  const jurado2 = await api.obtenerProfesorByCedula(profesoresDesignados[1].value);
+  const jurado1 = await api.obtenerProfesorByCedula(profesoresDesignados.value[0]);
+  const jurado2 = await api.obtenerProfesorByCedula(profesoresDesignados.value[1]);
 
   notificacion.value.jurado1 = jurado1;
   notificacion.value.jurado2 = jurado2;

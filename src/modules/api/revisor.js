@@ -1,3 +1,4 @@
+import { domain_url_env} from '../../config.js'
 export const aprobarPropuestaRevisor = async ( id_tg, observaciones_revisor ) => {
   const resTG = await fetch(domain_url_env+'/TG/evaluacionRevisor/' + id_tg, {
     method: 'PUT',

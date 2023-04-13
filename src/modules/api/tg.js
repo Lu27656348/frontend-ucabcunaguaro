@@ -66,28 +66,46 @@ export const crearTrabajoGradoExperimental = async ( TG, cedulaEstudiante,cedula
       })
     }else if (cedulaEstudiante.length > 1){
       console.log("Se detectaron 2 alumnos");
-      cedulaEstudiante.forEach( async (element) => {
-        if(element != undefined && element != null){
-          let peticion = await fetch(domain_url_env+'/realiza_TG',{
-            method: 'POST',
-            mode: 'cors',
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-              cedula_estudiante: element.cedula,
-              id_tg: data.id_tg
-            })
-          })
-          let respuesta = await peticion.json();
-          console.log(respuesta);
-        }
-      })
+
+
+      fetch(domain_url_env+'/realiza_TG',{
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          cedula_estudiante: cedulaEstudiante[0].cedula,
+          id_tg: data.id_tg
+        })
+      }).then( (respuesta) => {
+        return respuesta.json()
+      }).then( ( data) =>{
+        console.log("Estudiante insertado ", data)
+      } )
+
+      fetch(domain_url_env+'/realiza_TG',{
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          cedula_estudiante: cedulaEstudiante[1].cedula,
+          id_tg: data.id_tg
+        })
+      }).then( (respuesta) => {
+        return respuesta.json()
+      }).then( ( data) =>{
+        console.log("Estudiante insertado ", data)
+      } )
+
+ 
     }
 
   })
   .catch( (error) => {
-    console.log("Error en creacion de TG desde la api");
+    console.log("Error en creacion de TG desde la api - con dos alumnos");
     console.log(error)
   })
 };

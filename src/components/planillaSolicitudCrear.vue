@@ -177,7 +177,10 @@ crearSolicitudForm.value.empresa.id_empresa = computed(() => {
 
 async function insertarPlanilla() {
   let planillaGenerada;
+ 
   if (crearSolicitudForm.value.trabajoDeGrado.modalidad == "E") {
+
+    console.log(crearSolicitudForm.value.alumnos)
     await api.crearTrabajoGradoExperimental(
       crearSolicitudForm.value.trabajoDeGrado,
       crearSolicitudForm.value.alumnos,
@@ -256,8 +259,7 @@ async function insertarPlanilla() {
 
   emit("refrescar");
   planillaGenerada.imprimir();
-  await limpiarTodo();
-  alert('Revisa consola');
+  //await limpiarTodo();
   //crearSolicitudForm.value.progressbarState += crearSolicitudForm.value.progressValue;
 }
 
