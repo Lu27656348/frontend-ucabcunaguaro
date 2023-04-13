@@ -1,5 +1,5 @@
 export const obtenerTG = async () => {
-  const resTG = await fetch('http://localhost:3000/TG/');
+  const resTG = await fetch(domain_url_env+'/TG/');
   const tg = await resTG.json();
   //console.log("obtenerTG()");
   //console.log(tg);
@@ -7,7 +7,7 @@ export const obtenerTG = async () => {
 };
 
 export const obtenerTGById = async (idTG) => {
-  const resTG = await fetch('http://localhost:3000/TG/' + idTG);
+  const resTG = await fetch(domain_url_env+'/TG/' + idTG);
   const tg = await resTG.json();
   //console.log("obtenerTGById()");
   //console.log(tg);
@@ -16,7 +16,7 @@ export const obtenerTGById = async (idTG) => {
 
 export const crearTrabajoGradoExperimental = async ( TG, cedulaEstudiante,cedulaTutorAcademico,id_empresa) => {
   console.log("crearTrabajoGrado")
-  fetch('http://localhost:3000/TG',{
+  fetch(domain_url_env+'/TG',{
     method: 'POST',
     mode: 'cors',
     headers: {
@@ -44,7 +44,7 @@ export const crearTrabajoGradoExperimental = async ( TG, cedulaEstudiante,cedula
         cedula_estudiante: cedulaEstudiante[0].cedula,
         id_tg: data.id_tg
       }
-      fetch('http://localhost:3000/realiza_TG',{
+      fetch(domain_url_env+'/realiza_TG',{
       method: 'POST',
       mode: 'cors',
       headers: {
@@ -67,7 +67,7 @@ export const crearTrabajoGradoExperimental = async ( TG, cedulaEstudiante,cedula
       console.log("Se detectaron 2 alumnos");
       cedulaEstudiante.forEach( async (element) => {
         if(element != undefined && element != null){
-          let peticion = await fetch('http://localhost:3000/realiza_TG',{
+          let peticion = await fetch(domain_url_env+'/realiza_TG',{
             method: 'POST',
             mode: 'cors',
             headers: {
@@ -93,7 +93,7 @@ export const crearTrabajoGradoExperimental = async ( TG, cedulaEstudiante,cedula
 
 export const crearTrabajoGradoInstrumental = async ( TG, cedulaEstudiante,cedulaTutorExperimental,id_empresa ) => {
   console.log("API/crearTrabajoGrado()");
-  fetch('http://localhost:3000/TG',{
+  fetch(domain_url_env+'/TG',{
     method: 'POST',
     mode: 'cors',
     headers: {
@@ -122,7 +122,7 @@ export const crearTrabajoGradoInstrumental = async ( TG, cedulaEstudiante,cedula
         cedula_estudiante: cedulaEstudiante[0].cedula,
         id_tg: data.id_tg
       }
-      fetch('http://localhost:3000/realiza_TG',{
+      fetch(domain_url_env+'/realiza_TG',{
         method: 'POST',
         mode: 'cors',
         headers: {
@@ -146,7 +146,7 @@ export const crearTrabajoGradoInstrumental = async ( TG, cedulaEstudiante,cedula
       cedulaEstudiante.forEach( async (element) => {
         if(element != undefined && element != null){
           try {
-            let peticion = await fetch('http://localhost:3000/realiza_TG',{
+            let peticion = await fetch(domain_url_env+'/realiza_TG',{
             method: 'POST',
             mode: 'cors',
             headers: {
@@ -174,7 +174,7 @@ export const crearTrabajoGradoInstrumental = async ( TG, cedulaEstudiante,cedula
 };
 
 export const obtenerPropuestas = async ( estatus ) => {
-  const resTG = await fetch('http://localhost:3000/TG/estatus/'+estatus);
+  const resTG = await fetch(domain_url_env+'/TG/estatus/'+estatus);
   const tg = await resTG.json();
   //console.log("obtenerTG()");
   //console.log(tg);
@@ -182,11 +182,11 @@ export const obtenerPropuestas = async ( estatus ) => {
 };
 
 export const eliminarPlanilla = async ( idTg ) => {
-  await fetch('http://localhost:3000/TG/' + idTg,{method: 'DELETE'});
+  await fetch(domain_url_env+'/TG/' + idTg,{method: 'DELETE'});
 };
 
 export const actualizarPlanilla = async ( planilla ) => {
-  await fetch('http://localhost:3000/TG/' + planilla.id_tg,{
+  await fetch(domain_url_env+'/TG/' + planilla.id_tg,{
     method: 'PUT',
     mode: 'cors',
     headers: {
@@ -200,13 +200,13 @@ export const actualizarPlanilla = async ( planilla ) => {
 };
 
 export const obtenerPropuestaSinRevisor = async ( ) => {
-  const resTG = await fetch('http://localhost:3000/sin_revisor/');
+  const resTG = await fetch(domain_url_env+'/sin_revisor/');
   const tg_sin_revisor = await resTG.json();
   return tg_sin_revisor
 };
 
 export const obtenerEstudianteDeTG = async ( id_tg ) => {
-  const resEstudiantes = await fetch("http://localhost:3000/alumnosTG/" + id_tg);
+  const resEstudiantes = await fetch(domain_url_env+"/alumnosTG/" + id_tg);
   const estudiantes = await resEstudiantes.json();
   console.log("estudiantes")
   console.log(estudiantes)
@@ -223,13 +223,13 @@ export const obtenerEstudianteDeTG = async ( id_tg ) => {
 };
 
 export const obtenerPropuestaConRevisorAsignado = async ( ) => {
-  const resTG = await fetch('http://localhost:3000/con_revisor/');
+  const resTG = await fetch(domain_url_env+'/con_revisor/');
   const tg_con_revisor = await resTG.json();
   return tg_con_revisor
 };
 
 export const anexarPlanilla = async ( id_tg, nombre_planilla, documento) => {
-  const resPlanilla = await fetch('http://localhost:3000/anexarPlanilla/',{
+  const resPlanilla = await fetch(domain_url_env+'/anexarPlanilla/',{
     method: 'POST',
     mode: 'cors',
     headers: {
@@ -247,21 +247,21 @@ export const anexarPlanilla = async ( id_tg, nombre_planilla, documento) => {
 
 export const obtenerTGsinJurado = async () =>{
   console.log("obtenerTGsinJurado()");
-  const resJurado = await fetch('http://localhost:3000/sinJurado/');
+  const resJurado = await fetch(domain_url_env+'/sinJurado/');
   const jurados = await resJurado.json()
   return jurados;
 };
 
 export const obtenerTGconJurado = async () =>{
   console.log("obtenerTGconJurado()");
-  const resJurado = await fetch('http://localhost:3000/conJurado/');
+  const resJurado = await fetch(domain_url_env+'/conJurado/');
   const jurados = await resJurado.json()
   return jurados;
 };
 
 export const obtenerJuradosDeTG = async (id_tg) =>{
   console.log("obtenerJuradosDeTG()");
-  const resJurado = await fetch('http://localhost:3000/Jurado/buscar/',{
+  const resJurado = await fetch(domain_url_env+'/Jurado/buscar/',{
     method: 'PUT',
     mode: 'cors',
     headers: {
@@ -277,7 +277,7 @@ export const obtenerJuradosDeTG = async (id_tg) =>{
 
 export const defensaTrabajoDeGrado = async (id_tg, fecha_entrega_informe, fecha_defensa, mencion, razon_mencion, alumnos) =>{
   console.log("defensaTrabajoDeGrado()");
-  const resJurado = await fetch('http://localhost:3000/defensaTrabajoDeGrado',{
+  const resJurado = await fetch(domain_url_env+'/defensaTrabajoDeGrado',{
     method: 'PUT',
     mode: 'cors',
     headers: {

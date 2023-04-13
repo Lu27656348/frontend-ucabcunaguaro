@@ -1,5 +1,6 @@
+import {domain_url_env} from '../../config.js'
 export const obtenerCTG = async ( ) => {
-  const resCTG = await fetch('http://localhost:3000/CTG');
+  const resCTG = await fetch(domain_url_env+'/CTG');
   const ctg = await resCTG.json();
   console.log("obtenerCTG()");
   console.log(ctg);
@@ -7,7 +8,7 @@ export const obtenerCTG = async ( ) => {
 };
 
 export const buscarCTG = async ( id ) => {
-  const resCTG = await fetch('http://localhost:3000/CTG/'+id);
+  const resCTG = await fetch(domain_url_env+'/CTG/'+id);
   const ctg = await resCTG.json();
   console.log("buscarCTG()");
   console.log(ctg);
@@ -16,7 +17,7 @@ export const buscarCTG = async ( id ) => {
 
 export const revisionCTG = ( id_ctg, id_tg,decision_ctg ) => {
   let respuesta = null;
-  fetch('http://localhost:3000/revisa_CTG',{
+  fetch(domain_url_env+ '/revisa_CTG',{
     method: 'POST',
     mode: 'cors',
     headers: {
@@ -43,7 +44,7 @@ export const revisionCTG = ( id_ctg, id_tg,decision_ctg ) => {
 };
 
 export const obtenerComites = async ( estatus ) => {
-  const resCDE = await fetch('http://localhost:3000/CDE');
+  const resCDE = await fetch(domain_url_env+ '/CDE');
   const cde = await resCDE.json();
   console.log("obtenerComites()");
   console.log(cde);
@@ -52,7 +53,7 @@ export const obtenerComites = async ( estatus ) => {
 
 export const rechazarPropuestaComite = async ( id_tg ) => {
   console.log(id_tg);
-  await fetch('http://localhost:3000/TG/evaluacionComite/' + id_tg,{
+  await fetch(domain_url_env+'/TG/evaluacionComite/' + id_tg,{
     method: 'PUT',
     mode: 'cors',
     headers: {
@@ -66,7 +67,7 @@ export const rechazarPropuestaComite = async ( id_tg ) => {
 
 export const aprobarPropuestaComite = async ( id_tg,id_ctg ) => {
   
-  fetch('http://localhost:3000/TG/evaluacionComite/' + id_tg,{
+  fetch(domain_url_env+'/TG/evaluacionComite/' + id_tg,{
     method: 'PUT',
     mode: 'cors',
     headers: {
@@ -85,7 +86,7 @@ export const aprobarPropuestaComite = async ( id_tg,id_ctg ) => {
 };
 
 export const designarRevisor = async ( id_tg, id_profesor_revisor) => {
-  const resTG = await fetch('http://localhost:3000/asignarRevisor/'+id_tg,{
+  const resTG = await fetch(domain_url_env+'/asignarRevisor/'+id_tg,{
     method: 'PUT',
     mode: 'cors',
     headers: {
@@ -101,20 +102,20 @@ export const designarRevisor = async ( id_tg, id_profesor_revisor) => {
 };
 
 export const obtenerComitesByID = async (id_comite) => {
-  const comiteRequest = await fetch('http://localhost:3000/CTG/'+id_comite);
+  const comiteRequest = await fetch(domain_url_env+'/CTG/'+id_comite);
   const respuesta = await comiteRequest.json();
   return respuesta;
 }
 
 export const eliminarComite = async (id_comite) => {
-  const comiteRequest = await fetch('http://localhost:3000/CTG/'+id_comite,{
+  const comiteRequest = await fetch(domain_url_env+'/CTG/'+id_comite,{
     method: 'DELETE',
     mode: 'cors'
   });
 }
 
 export const añadirComite = async (comite) => {
-  const comiteRequest = await fetch('http://localhost:3000/CTG/',{
+  const comiteRequest = await fetch(domain_url_env+'/CTG/',{
     method: 'POST',
     mode: 'cors',
     headers: {
@@ -125,7 +126,7 @@ export const añadirComite = async (comite) => {
 }
 
 export const actualizarComite = async (comite) => {
-  const comiteRequest = await fetch('http://localhost:3000/CTG/'+comite.id_ctg,{
+  const comiteRequest = await fetch(domain_url_env+ '/CTG/'+comite.id_ctg,{
     method: 'PUT',
     mode: 'cors',
     headers: {

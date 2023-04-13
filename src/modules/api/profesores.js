@@ -1,5 +1,5 @@
 export const añadirProfesor = async (profesor) => {
-  const profesorNuevo = await fetch('http://localhost:3000/Profesores',{
+  const profesorNuevo = await fetch(domain_url_env+'/Profesores',{
     method: "POST",
     mode: 'cors',
     headers: {
@@ -9,7 +9,7 @@ export const añadirProfesor = async (profesor) => {
   });
 }
 export const actualizarProfesor = async (profesor) => {
-  const profesorActualizado = await fetch('http://localhost:3000/Profesores/'+ profesor.cedula,{
+  const profesorActualizado = await fetch(domain_url_env+'/Profesores/'+ profesor.cedula,{
     method: "PUT",
     mode: 'cors',
     headers: {
@@ -20,13 +20,13 @@ export const actualizarProfesor = async (profesor) => {
 }
 
 export const eliminarProfesor = async (id) => {
-  const profesor = await fetch('http://localhost:3000/Profesores/'+ id,{
+  const profesor = await fetch(domain_url_env+'/Profesores/'+ id,{
     method: "DELETE",
     mode: 'cors'
   });
 }
 export const obtenerProfesores = async () => {
-  const resProfesores = await fetch('http://localhost:3000/Profesores');
+  const resProfesores = await fetch(domain_url_env+'/Profesores');
   const profesores = await resProfesores.json();
   //console.log("obtenerProfesores()");
   //console.log(profesores);
@@ -34,7 +34,7 @@ export const obtenerProfesores = async () => {
 };
 
 export const obtenerProfesorByCedula = async (cedulaProfesor) => {
-  const resProfesor = await fetch('http://localhost:3000/Profesores/' + cedulaProfesor );
+  const resProfesor = await fetch(domain_url_env+'/Profesores/' + cedulaProfesor );
   const profesor = await resProfesor.json();
   //console.log("obtenerProfesorByCedula()");
   //console.log(cedulaProfesor)

@@ -11,6 +11,8 @@ import * as revisores from './api/revisor.js';
 import * as cde from './api/cde.js';
 import { async } from '@firebase/util';
 
+import { domain_url_env } from '../config.js';
+
 //const bcrypt = require("bcrypt")
 
 const ronda = 10;
@@ -81,7 +83,7 @@ export const obtenerPropuestas = async ( estatus ) => {
 };
 
 export const obtenerPropuestasSinTutorAcademicoAsignado = async ( ) => {
-  const tgs = await fetch('http://localhost:3000/SinTutorAcademicoAsignado');
+  const tgs = await fetch(domain_url_env+'/SinTutorAcademicoAsignado');
   const respuesta = await tgs.json()
   console.log(respuesta)
   return respuesta;
@@ -116,7 +118,7 @@ export const obtenerCTG = async ( ) => {
 //Aja
 export const aprobarPropuestaCTG = async ( id_tg,id_ctg,decision_ctg,comentario) => {
   try {
-    const peticion =  await fetch('http://localhost:3000/revisa_CTG',{
+    const peticion =  await fetch(domain_url_env+ '/revisa_CTG',{
       method: 'POST',
       mode: 'cors',
       headers: {
@@ -140,7 +142,7 @@ export const aprobarPropuestaCTG = async ( id_tg,id_ctg,decision_ctg,comentario)
 };
 //Aja
 export const rechazarPropuestaCTG = async ( id_tg,id_ctg,decision_ctg,comentario ) => {
-  fetch('http://localhost:3000/revisa_CTG',{
+  fetch(domain_url_env+'/revisa_CTG',{
       method: 'POST',
       mode: 'cors',
       headers: {
@@ -227,7 +229,7 @@ export const crearJurados = async (array, id_tg) => {
 };
 
 export const designarCDEJurado = async (id_tg , id_cde,observaciones_cde_j) => {
-  fetch('http://localhost:3000/designarCDEJurado',{
+  fetch(domain_url_env+'/designarCDEJurado',{
       method: 'PUT',
       mode: 'cors',
       headers: {
@@ -253,7 +255,7 @@ export const designarCDEJurado = async (id_tg , id_cde,observaciones_cde_j) => {
 
 export const buscarAdministradores = async (cedula) => {
   try {
-    const respuesta = await fetch('http://localhost:3000/Administradores',{
+    const respuesta = await fetch(domain_url_env+'/Administradores',{
       method: 'PUT',
       mode: 'cors',
       headers: {

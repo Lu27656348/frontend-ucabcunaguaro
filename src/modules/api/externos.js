@@ -1,5 +1,5 @@
 export const obtenerExternos = async () => {
-  const resExternos = await fetch('http://localhost:3000/Externos/');
+  const resExternos = await fetch(domain_url_env+'/Externos/');
   const externos = await resExternos.json();
   //console.log("obtenerExternos()");
   //console.log(externos);
@@ -7,7 +7,7 @@ export const obtenerExternos = async () => {
 };
 
 export const obtenerExternosById = async ( idExterno) => {
-  const resExternos = await fetch('http://localhost:3000/Externos/' + idExterno);
+  const resExternos = await fetch(domain_url_env+'/Externos/' + idExterno);
   const externos = await resExternos.json();
   //console.log("obtenerExternosById()");
   //console.log(externos);
@@ -15,14 +15,14 @@ export const obtenerExternosById = async ( idExterno) => {
 };
 
 export const obtenerExternoByCedula = async (cedulaExterno) => {
-  const resExterno = await fetch('http://localhost:3000/Externos/cedula/' + cedulaExterno );
+  const resExterno = await fetch(domain_url_env+'/Externos/cedula/' + cedulaExterno );
   const externo = await resExterno.json();
   console.log("obtenerExternoByCedula()");
   return externo;
 };
 
 export const añadirExterno = async (externo) => {
-    const resExterno = await fetch('http://localhost:3000/Externos/', {
+    const resExterno = await fetch(domain_url_env+'/Externos/', {
       method: 'POST',
       mode: 'cors',
       headers: {
@@ -33,7 +33,7 @@ export const añadirExterno = async (externo) => {
 }
 
 export const actualizarExterno = async (externo) => {
-  const resExterno = await fetch('http://localhost:3000/Externos/'+externo.id_externo, {
+  const resExterno = await fetch(domain_url_env+'/Externos/'+externo.id_externo, {
     method: 'PUT',
     mode: 'cors',
     headers: {
@@ -44,7 +44,7 @@ export const actualizarExterno = async (externo) => {
 }
 
 export const eliminarExterno = async (id_externo) => {
-  const resExterno = await fetch('http://localhost:3000/Externos/'+id_externo, {
+  const resExterno = await fetch(domain_url_env+'/Externos/'+id_externo, {
     method: 'DELETE',
     mode: 'cors',
   });

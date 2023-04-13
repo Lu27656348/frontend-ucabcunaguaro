@@ -1,5 +1,5 @@
 export const obtenerEmpresas = async () => {
-  const resEmpresas = await fetch('http://localhost:3000/Empresas/' );
+  const resEmpresas = await fetch(domain_url_env+'/Empresas/' );
   const empresas = await resEmpresas.json();
   //console.log("obtenerEmpresas()");
   //console.log(empresas);
@@ -7,7 +7,7 @@ export const obtenerEmpresas = async () => {
 };
 
 export const obtenerEmpresaById = async (idEmpresa) => {
-  const resEmpresa = await fetch('http://localhost:3000/Empresas/' + idEmpresa );
+  const resEmpresa = await fetch(domain_url_env+'/Empresas/' + idEmpresa );
   const empresa = await resEmpresa.json();
   //console.log("obtenerEmpresaById()");
   //console.log(empresa);
@@ -15,7 +15,7 @@ export const obtenerEmpresaById = async (idEmpresa) => {
 };
 
 export const crearEmpresa = async (empresa) => {
-  const resEmpresa = await fetch('http://localhost:3000/Empresas/',{
+  const resEmpresa = await fetch(domain_url_env+'/Empresas/',{
     method: 'POST',
     mode: 'cors',
     headers: {
@@ -26,7 +26,7 @@ export const crearEmpresa = async (empresa) => {
 };
 
 export const actualizarEmpresa = async (empresa) => {
-    const resEmpresa = await fetch('http://localhost:3000/Empresas/'+empresa.id_empresa,{
+    const resEmpresa = await fetch(domain_url_env+'/Empresas/'+empresa.id_empresa,{
       method: 'PUT',
       mode: 'cors',
       headers: {
@@ -37,7 +37,7 @@ export const actualizarEmpresa = async (empresa) => {
 }
 
 export const eliminarEmpresa = async (id) => {
-    const resEmpresa = await fetch('http://localhost:3000/Empresas/'+id,{
+    const resEmpresa = await fetch(domain_url_env+'/Empresas/'+id,{
       method: "DELETE",
       mode: 'cors'
     });

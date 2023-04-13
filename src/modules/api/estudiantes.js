@@ -1,5 +1,5 @@
 export const insertarEstudiantes = async (estudiante) =>{
-  const insertar = await fetch('http://localhost:3000/Estudiantes',{
+  const insertar = await fetch(domain_url_env+'/Estudiantes',{
       method: 'POST',
       mode: 'cors',
       headers: {
@@ -12,14 +12,14 @@ export const insertarEstudiantes = async (estudiante) =>{
 };
 
 export const eliminarEstudiante = async (id) =>{
-  const eliminar = await fetch('http://localhost:3000/Estudiantes/'+id,{
+  const eliminar = await fetch(domain_url_env+'/Estudiantes/'+id,{
       method: 'DELETE',
       mode: 'cors'
   });
 };
 
 export const actualizarEstudiante = async (estudiante) =>{
-  const eliminar = await fetch('http://localhost:3000/Estudiantes/'+estudiante.cedula,{
+  const eliminar = await fetch(domain_url_env+'/Estudiantes/'+estudiante.cedula,{
       method: 'PUT',
       mode: 'cors',
       headers: {
@@ -30,7 +30,7 @@ export const actualizarEstudiante = async (estudiante) =>{
 };
 
 export const obtenerEstudiantes = async () => {
-  const resEstudiantes = await fetch('http://localhost:3000/Estudiantes');
+  const resEstudiantes = await fetch(domain_url_env+'/Estudiantes');
   const estudiantes = await resEstudiantes.json();
   //console.log("obtenerEstudiantes()");
   //console.log(estudiantes);
@@ -38,7 +38,7 @@ export const obtenerEstudiantes = async () => {
 };
 
 export const obtenerEstudianteByCedula = async (cedulaEstudiante) =>{
-  const resEstudiante = await fetch('http://localhost:3000/Estudiantes/'+cedulaEstudiante);
+  const resEstudiante = await fetch(domain_url_env+'/Estudiantes/'+cedulaEstudiante);
   const estudiante = await resEstudiante.json();
   //console.log("obtenerEstudianteByCedula()");
   //console.log(estudiante);

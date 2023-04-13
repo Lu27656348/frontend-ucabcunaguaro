@@ -1,5 +1,5 @@
 export const aprobarPropuestaRevisor = async ( id_tg, observaciones_revisor ) => {
-  const resTG = await fetch('http://localhost:3000/TG/evaluacionRevisor/' + id_tg, {
+  const resTG = await fetch(domain_url_env+'/TG/evaluacionRevisor/' + id_tg, {
     method: 'PUT',
     mode: 'cors',
     headers: {
@@ -16,7 +16,7 @@ export const aprobarPropuestaRevisor = async ( id_tg, observaciones_revisor ) =>
 };
 
 export const rechazarPropuestaRevisor = async ( id_tg,observaciones_revisor ) => {
-  const resTG = await fetch('http://localhost:3000/TG/evaluacionRevisor/' + id_tg, {
+  const resTG = await fetch(domain_url_env+'/TG/evaluacionRevisor/' + id_tg, {
     method: 'PUT',
     mode: 'cors',
     headers: {

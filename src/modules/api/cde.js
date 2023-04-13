@@ -1,5 +1,6 @@
+import {domain_url_env} from '../../config.js'
 export const rechazarPropuestaCDE = async ( id_tg ) => {
-  const resTG = await fetch('http://localhost:3000/TG/evaluacionCDE/' + id_tg, {
+  const resTG = await fetch(domain_url_env+'/TG/evaluacionCDE/' + id_tg, {
     method: 'PUT',
     mode: 'cors',
     headers: {
@@ -16,7 +17,7 @@ export const rechazarPropuestaCDE = async ( id_tg ) => {
 export const aprobarPropuestaCDE = async ( id_tg,id_cde,comentario ) => {
   console.log("aprobarPropuestaCDE()")
   console.log(id_cde)
-  const resTG = await fetch('http://localhost:3000/TG/evaluacionCDE/' + id_tg, {
+  const resTG = await fetch(domain_url_env+'/TG/evaluacionCDE/' + id_tg, {
     method: 'PUT',
     mode: 'cors',
     headers: {
@@ -35,7 +36,7 @@ export const aprobarPropuestaCDE = async ( id_tg,id_cde,comentario ) => {
 export const asignarTutorAcademico = async ( id_tg, id_tutor_academico,observaciones ) => {
   try {
     console.log("asignarTutorAcademico")
-    const resTG = await fetch('http://localhost:3000/TG/asignarTutorAcademico/' + id_tg, {
+    const resTG = await fetch(domain_url_env+'/TG/asignarTutorAcademico/' + id_tg, {
     method: 'PUT',
     mode: 'cors',
     headers: {
@@ -58,19 +59,19 @@ export const asignarTutorAcademico = async ( id_tg, id_tutor_academico,observaci
 };
 
 export const obtenerCDE = async ( ) => {
-  const resCDE = await fetch('http://localhost:3000/CDE');
+  const resCDE = await fetch(domain_url_env+'/CDE');
   const CDE = await resCDE.json()
   return CDE;
 };
 
 export const obtenerCDEById = async ( id_cde ) => {
-  const resCDE = await fetch('http://localhost:3000/CDE/'+id_cde);
+  const resCDE = await fetch(domain_url_env+'/CDE/'+id_cde);
   const CDE = await resCDE.json()
   return CDE;
 };
 
 export const crearCDE = async (cde) =>{
-  const insertar = await fetch('http://localhost:3000/CDE',{
+  const insertar = await fetch(domain_url_env+'/CDE',{
       method: 'POST',
       mode: 'cors',
       headers: {
@@ -89,7 +90,7 @@ export const crearCDE = async (cde) =>{
 export const actualizarConsejo = async (cde) => {
   console.log("actualizarCDE() - desde la api")
   console.log(cde);
-  const actualizar = await fetch('http://localhost:3000/CDE/'+cde.id_cde,{
+  const actualizar = await fetch(domain_url_env+'/CDE/'+cde.id_cde,{
     method: 'PUT',
     mode: 'cors',
     headers: {
@@ -101,7 +102,7 @@ export const actualizarConsejo = async (cde) => {
 }
 
 export const eliminarCDE = async (id_cde) =>{
-  const eliminar = await fetch('http://localhost:3000/CDE/'+id_cde,{
+  const eliminar = await fetch(domain_url_env+'/CDE/'+id_cde,{
     method: 'DELETE',
     mode: 'cors'
   })
@@ -116,7 +117,7 @@ export const crearJuradosPorUno = async (jurado,id_tg,index) => {
   }else{
     tipo = 'J'
   }
-  const resJurado = await fetch('http://localhost:3000/crearJurado',{
+  const resJurado = await fetch(domain_url_env+'/crearJurado',{
     method: 'POST',
     mode: 'cors',
     headers: {
