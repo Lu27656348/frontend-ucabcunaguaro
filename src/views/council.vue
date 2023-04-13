@@ -1,5 +1,5 @@
 <script setup>
-import Record from "../../src/components/record.vue";
+import Record from "../components/record.vue";
 import { PropuestaTg } from "../modules/classes/planillaPropuesta.js";
 import { ref, reactive, onMounted, computed } from "vue";
 import * as api from "../modules/apiTools.js";
