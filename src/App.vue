@@ -33,7 +33,6 @@ const moverLogin = () => {
 
 <template>
   <div  v-if="logged" class="navbar">
-    <img src="./assets/ucab - isotipo.png" alt="" />
     <ul class="navbar__list">
       <li class="navbar__list__element">
         <router-link to="/requests"
