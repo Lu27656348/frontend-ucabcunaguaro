@@ -4,8 +4,6 @@ import crearSolicitud from "../components/planillaSolicitudCrear.vue";
 import { ref, reactive, onMounted, computed } from "vue";
 import * as api from "../modules/apiTools.js";
 import { PlanillaPropuestaTEG } from "../modules/classes/planillaPropuestaTEG.js";
-import { async } from "@firebase/util";
-import { Alignment } from "docx";
 import { PlanillaPropuestaTIG } from "../modules/classes/planillaPropuestaTIG.js";
 
 let data = reactive([]);
@@ -127,9 +125,6 @@ onMounted(async () => {
       <button @click="showFiltrado()" class="succes">
         <ion-icon name="bulb-outline"></ion-icon>Buscar Propuesta
       </button>
-      <button @click="regenerarPlanilla()" class="succes">
-        RegenerarPlanilla
-      </button>
       <button class="succes">
         <ion-icon name="cog-outline"></ion-icon>Buscar Modalidad
       </button>
@@ -193,6 +188,11 @@ onMounted(async () => {
               @click="eliminarPlanilla(planilla.id_tg)"
             >
               Eliminar planilla
+            </button>
+            <button
+              @click="regenerarPlanilla()"
+            >
+              Descargar Planilla
             </button>
           </div>
         </form>
