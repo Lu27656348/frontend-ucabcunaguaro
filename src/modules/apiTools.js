@@ -16,7 +16,9 @@ console.log(domain_url_env)
 //const bcrypt = require("bcrypt")
 
 const ronda = 10;
-
+export const obtenerEstudiantesRealizaTG = async () =>{
+  return tgs.obtenerEstudiantesRealizaTG()
+};
 export const insertarEstudiantes = async (estudiante) =>{
   return estudiantes.insertarEstudiantes(estudiante);
 };

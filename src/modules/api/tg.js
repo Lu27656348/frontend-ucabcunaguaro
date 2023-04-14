@@ -1,3 +1,4 @@
+import { async } from '@firebase/util';
 import {domain_url_env} from '../../config.js'
 export const obtenerTG = async () => {
   const resTG = await fetch(domain_url_env+'/TG/');
@@ -317,3 +318,9 @@ export const defensaTrabajoDeGrado = async (id_tg, fecha_entrega_informe, fecha_
   console.log(resJurado)
   //return jurados;
 };
+
+export const obtenerEstudiantesRealizaTG = async () => {
+  const trabajos = await fetch(domain_url_env+'/realiza_TG/estudiantesRealizaTG');
+  const respuesta = await trabajos.json()
+  return respuesta;
+}
