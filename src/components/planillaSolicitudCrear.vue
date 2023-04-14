@@ -88,6 +88,7 @@ const añadirEmpresa = async () => {
   crearEmpresa.value.direccion = "";
   crearEmpresa.value.nombre = "";
   crearEmpresa.value.telefono = "";
+  dataEmpresas.value = await api.obtenerEmpresas();
 };
 
 async function buscarEstudiantes() {
@@ -261,6 +262,7 @@ async function insertarPlanilla() {
   planillaGenerada.imprimir();
   //await limpiarTodo();
   //crearSolicitudForm.value.progressbarState += crearSolicitudForm.value.progressValue;
+  emit("refrescar");
 }
 
 onMounted(async () => {

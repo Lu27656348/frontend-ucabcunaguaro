@@ -4,7 +4,7 @@
         id_tg: String,
         titulo: String,
         modalidad: String,
-        fechaenvio: String,
+        fecha_solicitud: String,
         estatus: String,
         id_ta: Number,
         id_admin_evaluador: Number

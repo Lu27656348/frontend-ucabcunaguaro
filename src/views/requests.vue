@@ -91,22 +91,25 @@ const regenerarPlanilla = async () => {
  
 } 
 
-async function actualizarPlanilla() {
-  await api.actualizarPlanilla(planilla.value);
-  data.value = await api.obtenerPropuestas("PC");
-}
-
-async function eliminarPlanilla() {
-  console.log(planilla.value);
-  await api.eliminarPlanilla(planilla.value.id_tg);
-  data.value = await api.obtenerPropuestas("PC");
-}
 
 async function pedirData(){
   data.value = await api.obtenerPropuestas("PC");
   dataFiltrada.value = data.value;
 }
 
+async function actualizarPlanilla() {
+  console.log(planilla.value);
+  await api.actualizarPlanilla(planilla.value);
+  await pedirData();
+  await pedirData();
+}
+
+async function eliminarPlanilla() {
+  console.log("Eliminando planilla");
+  const eliminar = await api.eliminarPlanilla(planilla.value.id_tg);
+  await pedirData();
+  await pedirData();
+}
 onMounted(async () => {
   data.value = await api.obtenerPropuestas("PC");
   dataFiltrada.value = data.value;
@@ -170,14 +173,13 @@ onMounted(async () => {
             />
             <p>Titulo de Trabajo de Grado</p>
             <textarea
-              disabled
               maxlength="200"
               v-model="planilla.titulo"
               class="request__container__preview__form__inputs--titulo-tg"
               placeholder="Tutilo de Propuesta TG"
             ></textarea>
             <p for="">Modalidad</p>
-            <select name="modalidad" id="">
+            <select name="modalidad" id="" v-model="planilla.modalidad">
               <option value="E">Experimental</option>
               <option value="I">Instrumental</option>
             </select>
@@ -197,7 +199,7 @@ onMounted(async () => {
 
         <crearSolicitud
           :showPlanillaCreate="showPlanillaCreate"
-          @refrescar="pedirData()"
+          @refrescar="pedirData"
         />
       </div>
     </div>
