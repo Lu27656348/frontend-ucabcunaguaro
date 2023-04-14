@@ -324,3 +324,14 @@ export const obtenerEstudiantesRealizaTG = async () => {
   const respuesta = await trabajos.json()
   return respuesta;
 }
+export const obtenerEstudiantesSinRevisorRealizaTG = async () => {
+  const trabajos = await fetch(domain_url_env+'/sin_revisorRealizaTG');
+  const respuesta = await trabajos.json()
+  return respuesta;
+}
+
+export const obtenerEstudiantesConRevisorRealizaTG = async () => {
+  const trabajos = await fetch(domain_url_env+'/con_revisorRealizaTG');
+  const respuesta = await trabajos.json()
+  return respuesta;
+}

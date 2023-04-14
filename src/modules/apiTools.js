@@ -425,3 +425,13 @@ export const regenerarPlanillaPropuestaTEG = async (id_tg) => {
       //const empresa = await obtenerEmpresaById(trabajo_de_grado.id_empresa);
       //const tutor = await obtenerProfesorByCedula(trabajo_de_grado.id_tutor_academico)
 } 
+
+export const obtenerEstudiantesSinRevisorRealizaTG = async (id_tg) => {
+  return await tgs.obtenerEstudiantesSinRevisorRealizaTG();
+} 
+
+
+export const obtenerEstudiantesConRevisorRealizaTG = async (id_tg) => {
+  return await tgs.obtenerEstudiantesConRevisorRealizaTG();
+} 
+
