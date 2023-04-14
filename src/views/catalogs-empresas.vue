@@ -113,7 +113,7 @@ const eliminarEmpresa = async () => {
             />
             <div class="actions">
               <button
-                class="login__form__btn succes"
+                class="succes"
                 type="submit"
                 v-show="mostrarCrearEmpresa"
                 :disabled="
@@ -125,20 +125,7 @@ const eliminarEmpresa = async () => {
                 Añadir Empresa
               </button>
               <button
-                class="login__form__btn succes"
-                type="button"
-                v-show="!mostrarCrearEmpresa"
-                @click="eliminarEmpresa()"
-                :disabled="
-                  crearEmpresa.nombre == '' ||
-                  crearEmpresa.direccion == '' ||
-                  crearEmpresa.telefono == ''
-                "
-              >
-                Elininar Empresa
-              </button>
-              <button
-                class="login__form__btn succes"
+                class="succes"
                 @click="actualizarEmpresa()"
                 type="button"
                 v-show="!mostrarCrearEmpresa"
@@ -149,6 +136,19 @@ const eliminarEmpresa = async () => {
                 "
               >
                 Actualizar Empresa
+              </button>
+              <button
+                class="cancel"
+                type="button"
+                v-show="!mostrarCrearEmpresa"
+                @click="eliminarEmpresa()"
+                :disabled="
+                  crearEmpresa.nombre == '' ||
+                  crearEmpresa.direccion == '' ||
+                  crearEmpresa.telefono == ''
+                "
+              >
+                Elininar Empresa
               </button>
             </div>
           </div>

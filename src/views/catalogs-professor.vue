@@ -135,21 +135,21 @@ onMounted(async () => {
             <input type="text" v-model="profesor.profesion" />
             <div class="actions">
               <button 
-                class="login__form__btn succes" 
+                class="succes" 
                 @click="añadirProfesor()"
                 v-show="crearProfesor"
               >
                 Añadir Profesor
               </button>
               <button
-                class="login__form__btn succes"
+                class="succes"
                 @click="actualizarProfesor()"
                 v-show="!crearProfesor"
               >
                 Actualizar Profesor
               </button>
               <button
-                class="login__form__btn cancel"
+                class="cancel"
                 @click="eliminarProfesor()"
                 v-show="!crearProfesor"
               >

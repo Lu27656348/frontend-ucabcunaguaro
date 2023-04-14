@@ -131,7 +131,7 @@ onMounted(async () => {
             </div>
             <div class="actions">
               <button
-                class="login__form__btn succes"
+                class="succes"
                 @click="aprobarPropuestaComite()"
                 :disabled=" formularioPropuesta.id_ctg == '' || formularioPropuesta.id_ctg == undefined "
               >

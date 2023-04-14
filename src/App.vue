@@ -81,8 +81,18 @@ const moverLogin = () => {
           ><ion-icon name="book-outline"></ion-icon> Catalogos</router-link
         >
       </li>
-      <li class="navbar__list__element">
-        <button @click="moverLogin()">Cerrar sesion</button>
+      <li class="navbar__list__element"
+        style="display: flex; justify-content: center;"
+      >
+        <button 
+          class="cancel" 
+          @click="moverLogin()"
+          style="
+            width: 80%;
+            height: 40px;
+            margin-bottom: 15px;
+          "
+          >Cerrar sesion</button>
       </li>
     </ul>
   </div>

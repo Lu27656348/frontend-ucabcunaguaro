@@ -19,9 +19,7 @@ const router = createRouter({
     { path: '/catalogs/empresas', name: 'catalogs-empresas', component: ()=> import('../views/catalogs-empresas.vue') },
     { path: '/catalogs/externos', name: 'catalogs-externos', component: ()=> import('../views/catalogs-externos.vue') },
     { path: '/catalogs/consejo', name: 'catalogs-consejo', component: ()=> import('../views/catalogs-consejo.vue') },
-    { path: '/catalogs/comite', name: 'catalogs-comite', component: ()=> import('../views/catalogs-comite.vue') },
-    { path: '/catalogs/especialidades', name: 'catalogs-especialidades', component: ()=> import('../views/catalogs-especialidades.vue') },
-    { path: '/catalogs/areas-especialidades', name: 'catalogs-areas-especialidades', component: ()=> import('../views/catalogs-areas-especialidades.vue') },
+    { path: '/catalogs/comite', name: 'catalogs-comite', component: ()=> import('../views/catalogs-comite.vue') }
   ]
 });
 

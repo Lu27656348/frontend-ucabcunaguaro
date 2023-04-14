@@ -96,21 +96,21 @@ onMounted(async () => {
             <input type="text" v-model="comite.resumen_ctg">
             <div class="actions">
               <button 
-                class="login__form__btn succes" 
+                class="succes" 
                 @click="añadirComite()"
                 v-show="crearComite"
               >
                 Añadir Comite
               </button>
               <button 
-                class="login__form__btn succes" 
+                class="succes" 
                 @click="actualizarComite()"
                 v-show="!crearComite"
               >
                 Actualizar Comite
               </button>
               <button 
-                class="login__form__btn cancel" 
+                class="cancel" 
                 @click="eliminarComite()"
                 v-show="!crearComite"
               >

@@ -129,21 +129,21 @@ onMounted(async () => {
             <input type="text" v-model="externo.cargo" />
             <div class="actions">
               <button 
-                class="login__form__btn succes"
+                class="succes"
                 v-show="crearExterno"
                 @click="añadirExterno()"
               >
                 Añadir Externo
               </button>
               <button
-                class="login__form__btn succes"
+                class="succes"
                 v-show="!crearExterno"
                 @click="actualizarExterno()"
               >
                 Actualizar Externo
               </button>
               <button
-                class="login__form__btn cancel"
+                class="cancel"
                 v-show="!crearExterno"
                 @click="eliminarExterno()"
               >

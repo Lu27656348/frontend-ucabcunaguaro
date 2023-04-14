@@ -66,7 +66,7 @@ onMounted((user) => {
         >
       </li>
       <li class="navbar__list__element">
-        <button @click="props.cerrarSesion()">Cerrar sesion</button>
+        <button class="login__form--btn cancel" @click="props.cerrarSesion()">Cerrar sesion</button>
       </li>
     </ul>
   </div>

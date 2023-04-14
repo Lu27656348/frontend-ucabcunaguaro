@@ -91,7 +91,7 @@ onMounted(async () => {
             <input type="date" v-model="consejo.fecha_conformacion" />
             <div class="actions">
               <button 
-                class="login__form__btn succes" 
+                class="succes" 
                 @click="añadirConsejo()"
                 v-show="crearConsejo"
               >
@@ -99,14 +99,14 @@ onMounted(async () => {
               </button>
               <button
                 @click="actualizarConsejo()"
-                class="login__form__btn succes"
+                class="succes"
                 v-show="!crearConsejo"
               >
                 Actualizar Consejo
               </button>
               <button
                 @click="eliminarConsejo()"
-                class="login__form__btn cancel"
+                class="cancel"
                 v-show="!crearConsejo"
               >
                 Eliminar Consejo

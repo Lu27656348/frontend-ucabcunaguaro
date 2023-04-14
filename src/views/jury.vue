@@ -235,7 +235,7 @@ onMounted(async () => {
           </div>
           <div class="actions">
             <button
-              class="login__form__btn succes"
+              class="succes"
               @click="designarJurado(profesoresDesignados, planilla.id_tg)"
               :disabled="
                 profesoresDesignados[0]=='' ||

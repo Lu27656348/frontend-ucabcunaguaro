@@ -162,7 +162,7 @@ onMounted(async () => {
             </div>
             <div class="actions">
               <button
-                class="login__form__btn succes"
+                class="succes"
                 @click="aceptarTG(formularioPropuesta.id_tg)"
                 :disabled=" formularioPropuesta.id_cde=='' "
               >

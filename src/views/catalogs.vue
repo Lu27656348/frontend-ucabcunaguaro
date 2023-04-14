@@ -33,12 +33,6 @@ console.log("Estoy corriendo");
           <li class="request__container__display__list__record"   >
             <router-link to="/catalogs/comite"><ion-icon name="book-outline"></ion-icon> Comite</router-link>
           </li>
-          <li class="request__container__display__list__record"   >
-            <router-link to="/catalogs/especialidades"><ion-icon name="book-outline"></ion-icon> Especialidades</router-link>
-          </li>
-          <li class="request__container__display__list__record"   >
-            <router-link to="/catalogs/areas-especialidades"><ion-icon name="book-outline"></ion-icon> Areas de Especialidades</router-link>
-          </li>
         </ul>
       </div>
       <div class="committe__container__preview">

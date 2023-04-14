@@ -111,25 +111,25 @@ onMounted(async () => {
             <div class="actions">
               <button
                 v-show="crearEstudiante"
-                class="login__form__btn succes"
+                class="succes"
                 @click="añadirEstudiante()"
               >
                 Añadir Estudiante
               </button>
               <button
-                v-show="!crearEstudiante"
-                class="login__form__btn succes"
-                @click="eliminarEstudiante()"
+              v-show="!crearEstudiante"
+              class="succes"
+              @click="actualizarEstudiante()"
               >
-                Eliminar Estudiante
-              </button>
-              <button
-                v-show="!crearEstudiante"
-                class="login__form__btn succes"
-                @click="actualizarEstudiante()"
-              >
-                Actualizar Estudiante
-              </button>
+              Actualizar Estudiante
+            </button>
+            <button
+              v-show="!crearEstudiante"
+              class="cancel"
+              @click="eliminarEstudiante()"
+            >
+              Eliminar Estudiante
+            </button>
             </div>
           </div>
           <!-- aqui van los formularios necesarios para el proceso de crear una asignacion de revisor a la propuesta -->

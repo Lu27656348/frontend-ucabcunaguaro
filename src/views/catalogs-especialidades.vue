@@ -49,7 +49,7 @@ onMounted(async () => {
             <input type="text" v-model="especialidad.nombre_area">
             <div class="actions">
               <button 
-                class="login__form__btn succes" 
+                class="succes" 
               >
                 Añadir Especialidad
               </button>

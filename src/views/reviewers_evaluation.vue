@@ -103,7 +103,7 @@ onMounted(async () => {
 
             <div class="actions">
               <button
-                class="login__form__btn succes"
+                class="succes"
                 @click="aprobarPropuesta()"
                 :disabled="formularioPropuesta.titulo == '' || formularioPropuesta.revisor == ''"
               >

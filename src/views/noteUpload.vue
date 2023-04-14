@@ -176,7 +176,7 @@ onMounted(async () => {
             </div>
             <div class="actions">
               <button
-                class="login__form__btn succes"
+                class="succes"
                 @click="descargarPlanillas()"
                 :disabled="planilla.id_tg == ''"
               >

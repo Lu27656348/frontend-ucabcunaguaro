@@ -153,7 +153,7 @@ onMounted(async () => {
           ></textarea>
           <div class="actions">
             <button
-              class="login__form__btn succes"
+              class="succes"
               @click="asignarTutorAcademico()"
               :disabled="cdeRef == '' || formularioPropuesta.id_tutor_academico == '' || formularioPropuesta.id_tg==''"
             >

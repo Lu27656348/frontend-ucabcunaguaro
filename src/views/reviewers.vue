@@ -160,7 +160,7 @@ onMounted(async () => {
             </div>
             <div class="actions">
               <button 
-                class="login__form__btn succes" 
+                class="succes" 
                 @click="designarTutor()"
                 :disabled=" formularioPropuesta.id_profesor_revisor == '' || formularioPropuesta.id_profesor_revisor == undefined || formularioPropuesta.id_tg == '' "
               >

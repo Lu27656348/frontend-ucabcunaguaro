@@ -46,7 +46,7 @@ onMounted(async () => {
             <input type="text" v-model="area.nombre_area">
             <div class="actions">
               <button 
-                class="login__form__btn succes" 
+                class="succes" 
               >
                 Añadir Area
               </button>
