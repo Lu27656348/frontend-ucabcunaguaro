@@ -1,0 +1,61 @@
+.filter-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  margin-top: 5%;
+
+  position: absolute;
+
+  min-width: 550px;
+  padding: 5px;
+  
+  border: solid 3px #282f3b;
+  border-radius: 10px;
+  background-color: #faf9fe;
+
+  padding: 20px;
+
+  transition: 0.2s;
+  ion-icon{
+    align-self: flex-start;
+    width: 30px;
+    height: 30px;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+
+  p{
+    margin: 15px 0;
+  }
+
+  input{
+    margin: 5px 0;
+    padding: 5px;
+    width: 100%;
+    appearance: none;
+    border: #7da0d4 solid 2px;
+
+    transition: all 0.1s;
+
+    &:focus {
+      border-radius: 10px;
+      box-shadow: 0 1px 1px hsla(216, 50%, 66%, 0.075)nset, 0 0 8px hsla(216, 50%, 66%, 0.6);
+      outline: 0 none;
+    }
+  }
+  button{
+    width: 90%;
+  }
+
+}
+
+
+
+// #282f3b gris
+// #faf9fe blanco
+// #e7dcf8 ZULITO
+// #1b2f6b azul
+// #10224D AZULOTE

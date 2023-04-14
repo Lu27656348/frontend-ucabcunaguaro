@@ -39,9 +39,19 @@ function showFiltrado() {
   btnFiltrado.value = !btnFiltrado.value;
 }
 
-function filtrarLista(){
-  dataFiltrada.value = data.value.filter((t) => t.titulo.includes(tituloParaFiltrar.value));
-  console.log(dataFiltrada.value);
+function filtrarLista() {
+  console.log("Titulo para filtrar");
+  console.log("Valor: " + tituloParaFiltrar.value);
+
+  if (tituloParaFiltrar.value != null) {
+      dataFiltrada.value = data.value.filter((t) =>
+      t.titulo.includes(tituloParaFiltrar.value)
+    );
+    console.log(dataFiltrada.value);
+  }
+  btnFiltrado.value = false;
+  tituloParaFiltrar.value = '';
+  return;
 }
 
 const clickenComponente = async (id) => {
@@ -60,37 +70,49 @@ const clickenComponente = async (id) => {
 };
 
 const regenerarPlanilla = async () => {
-  console.log("regenerarPlanilla()")
+  console.log("regenerarPlanilla()");
   const trabajo_de_grado = await api.obtenerTGById(planilla.value.id_tg);
   const alumnos = await api.obtenerEstudianteDeTG(planilla.value.id_tg);
   const empresa = await api.obtenerEmpresaById(trabajo_de_grado.id_empresa);
   console.log(trabajo_de_grado);
   console.log(alumnos);
   console.log(empresa);
-  if(trabajo_de_grado.modalidad == 'E'){
-    const tutor_academico = await api.obtenerProfesorByCedula(trabajo_de_grado.id_tutor_academico)
-    console.log(tutor_academico)
-    let planillaGenerada = new PlanillaPropuestaTEG(trabajo_de_grado.titulo, empresa.nombre,empresa,tutor_academico);
+  if (trabajo_de_grado.modalidad == "E") {
+    const tutor_academico = await api.obtenerProfesorByCedula(
+      trabajo_de_grado.id_tutor_academico
+    );
+    console.log(tutor_academico);
+    let planillaGenerada = new PlanillaPropuestaTEG(
+      trabajo_de_grado.titulo,
+      empresa.nombre,
+      empresa,
+      tutor_academico
+    );
     planillaGenerada.añadirAlumno(alumnos[0]);
-    if(alumnos[1] != null && alumnos[1] != undefined){
+    if (alumnos[1] != null && alumnos[1] != undefined) {
       planillaGenerada.añadirAlumno(alumnos[1]);
     }
     planillaGenerada.imprimir();
-  }else{
-    const tutor_empresarial = await api.obtenerExternosById(trabajo_de_grado.id_tutor_empresarial);
-    console.log(tutor_empresarial)
-    let planillaGenerada = new PlanillaPropuestaTIG(trabajo_de_grado.titulo, empresa.nombre,empresa,tutor_empresarial);
+  } else {
+    const tutor_empresarial = await api.obtenerExternosById(
+      trabajo_de_grado.id_tutor_empresarial
+    );
+    console.log(tutor_empresarial);
+    let planillaGenerada = new PlanillaPropuestaTIG(
+      trabajo_de_grado.titulo,
+      empresa.nombre,
+      empresa,
+      tutor_empresarial
+    );
     planillaGenerada.añadirAlumno(alumnos[0]);
-    if(alumnos[1] != null && alumnos[1] != undefined){
+    if (alumnos[1] != null && alumnos[1] != undefined) {
       planillaGenerada.añadirAlumno(alumnos[1]);
     }
     planillaGenerada.imprimir();
   }
- 
-} 
+};
 
-
-async function pedirData(){
+async function pedirData() {
   data.value = await api.obtenerPropuestas("PC");
   dataFiltrada.value = data.value;
 }
@@ -183,17 +205,10 @@ onMounted(async () => {
             <button type="submit" @click="actualizarPlanilla(planilla.id_tg)">
               Actualizar planilla
             </button>
-            <button 
-              class="cancel" 
-              @click="eliminarPlanilla(planilla.id_tg)"
-            >
+            <button class="cancel" @click="eliminarPlanilla(planilla.id_tg)">
               Eliminar planilla
             </button>
-            <button
-              @click="regenerarPlanilla()"
-            >
-              Descargar Planilla
-            </button>
+            <button @click="regenerarPlanilla()">Descargar Planilla</button>
           </div>
         </form>
 
@@ -206,16 +221,14 @@ onMounted(async () => {
     <div
       class="filter-form"
       v-if="btnFiltrado"
-      style="
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        background-color: aqua;
-        padding: 15px;
-        "
     >
-      <p>Digite el Titulo de Trabajo de Grado</p>
-      <input type="text" v-model="tituloParaFiltrar" placeholder="Titulo de Trabajo de Grado">
+      <ion-icon name="close-circle-outline" @click="showFiltrado()"></ion-icon>
+      <p>Ingrese el Titulo de Trabajo de Grado</p>
+      <input
+        type="text"
+        v-model="tituloParaFiltrar"
+        placeholder="Cuando aparezca este texto puede listar todos los TG."
+      />
       <button @click="filtrarLista()">Buscar propuesta</button>
     </div>
   </div>

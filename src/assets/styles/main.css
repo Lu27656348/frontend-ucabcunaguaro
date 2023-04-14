@@ -86,6 +86,49 @@ body {
   transition: all 0.2s;
 }
 
+.filter-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 5%;
+  position: absolute;
+  min-width: 550px;
+  padding: 5px;
+  border: solid 3px #282f3b;
+  border-radius: 10px;
+  background-color: #faf9fe;
+  padding: 20px;
+  transition: 0.2s;
+}
+.filter-form ion-icon {
+  align-self: flex-start;
+  width: 30px;
+  height: 30px;
+}
+.filter-form ion-icon:hover {
+  cursor: pointer;
+}
+.filter-form p {
+  margin: 15px 0;
+}
+.filter-form input {
+  margin: 5px 0;
+  padding: 5px;
+  width: 100%;
+  appearance: none;
+  border: #7da0d4 solid 2px;
+  transition: all 0.1s;
+}
+.filter-form input:focus {
+  border-radius: 10px;
+  box-shadow: 0 1px 1px rgba(125, 160, 212, 0.075) nset, 0 0 8px rgba(125, 160, 212, 0.6);
+  outline: 0 none;
+}
+.filter-form button {
+  width: 90%;
+}
+
 .login__form {
   display: flex;
   justify-content: center;
