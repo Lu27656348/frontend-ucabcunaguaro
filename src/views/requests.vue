@@ -220,7 +220,7 @@ onMounted(async () => {
     </div>
     <div
       class="filter-form"
-      v-if="btnFiltrado"
+      :style="btnFiltrado? 'Top: 0': 'top: -1000px'"
     >
       <ion-icon name="close-circle-outline" @click="showFiltrado()"></ion-icon>
       <p>Ingrese el Titulo de Trabajo de Grado</p>
