@@ -6,6 +6,7 @@ import { PropuestaTg } from "../modules/classes/planillaPropuesta.js";
 
 let dataPropuestas = reactive([]);
 let dataComites = reactive([]);
+
 let dataFiltrada = reactive([]);
 let dataFiltradaRealizaCedula = reactive([]);
 
@@ -115,8 +116,8 @@ const rechazarPropuestaComite = async () => {
     formularioPropuesta.value.id_ctg,
     "R"
   );
-  dataPropuestas.value = await api.obtenerPropuestas("PC");
   formularioPropuesta.value = new PropuestaTg();
+  await pedirData();
 };
 
 const aprobarPropuestaComite = async () => {
@@ -127,8 +128,8 @@ const aprobarPropuestaComite = async () => {
     "A",
     formularioPropuesta.value.observaciones_comite
   );
-  dataPropuestas.value = await api.obtenerPropuestas("PC");
   formularioPropuesta.value = new PropuestaTg();
+  await pedirData();
 };
 
 const pedirData = async () => {
