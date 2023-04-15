@@ -221,6 +221,10 @@ export const obtenerTGconJurado = async () =>{
   return tgs.obtenerTGconJurado();
 };
 
+export const obtenerTGconJuradoRealizaTG = async () =>{
+  return tgs.obtenerTGconJuradoRealizaTG();
+};
+
 export const crearJuradosPorUno = async (jurado, id_tg) => {
   return cde.crearJuradosPorUno(jurado, id_tg);
 };
@@ -383,42 +387,6 @@ export const añadirComite = async (comite) => {
   const comiteRequest = await comites.añadirComite(comite);
 }
 
-/* En el siguiente comentario se anexa el esquema de la clase para regerar la planilla */
-/* 
-      PlanillaPropuestaTEG = {
-        titulo,
-        organizacion,
-        alumnos: [
-          {
-            nombres,
-            apellidos,
-            cedula,
-            telefono,
-            email,
-          }
-        ],
-        tutor_academico: {
-            nombres,
-            apellidos,
-            cedula,
-            email,
-            oficina,
-            telefono,
-            profesion,
-            experiencia,
-            fecha_graduado,
-            cargo,
-            fecha_entrega
-        },
-        empresa: {
-          nombre,
-          direccion,
-          telefono
-        }
-      }
-
-
-*/
 export const regenerarPlanillaPropuestaTEG = async (id_tg) => {
       const trabajo_de_grado = await obtenerTGById(id_tg)
       const alumnos = await obtenerEstudianteDeTG(id_tg);

@@ -279,6 +279,13 @@ export const obtenerTGconJurado = async () =>{
   return jurados;
 };
 
+export const obtenerTGconJuradoRealizaTG = async () =>{
+  console.log("obtenerTGconJuradoRealizaTG()");
+  const resJurado = await fetch(domain_url_env+'/conJuradoRealizaTG/');
+  const jurados = await resJurado.json()
+  return jurados;
+};
+
 export const obtenerJuradosDeTG = async (id_tg) =>{
   console.log("obtenerJuradosDeTG()");
   const resJurado = await fetch(domain_url_env+'/Jurado/buscar/',{
