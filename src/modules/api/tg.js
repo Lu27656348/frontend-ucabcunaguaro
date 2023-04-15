@@ -335,3 +335,22 @@ export const obtenerEstudiantesConRevisorRealizaTG = async () => {
   const respuesta = await trabajos.json()
   return respuesta;
 }
+
+
+export const obtenerTGSinConsejoEscuelaRealizaTG = async () => {
+  const trabajos = await fetch(domain_url_env+'/obtenerTGSinConsejoEscuelaRealizaTG');
+  const respuesta = await trabajos.json()
+  return respuesta;
+}
+
+export const obtenerTGSinTutorAsignadoRealizaTG = async () => {
+  const trabajos = await fetch(domain_url_env+'/obtenerTGSinTutorAsignadoRealizaTG');
+  const respuesta = await trabajos.json()
+  return respuesta;
+}
+
+export const obtenerTGSinJuradoAsignadoRealizaTG = async () => {
+  const trabajos = await fetch(domain_url_env+'/obtenerTGSinJuradoAsignadoRealizaTG');
+  const respuesta = await trabajos.json()
+  return respuesta;
+}

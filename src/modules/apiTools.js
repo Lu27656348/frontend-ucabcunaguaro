@@ -435,3 +435,14 @@ export const obtenerEstudiantesConRevisorRealizaTG = async (id_tg) => {
   return await tgs.obtenerEstudiantesConRevisorRealizaTG();
 } 
 
+export const obtenerTGSinConsejoEscuelaRealizaTG = async (id_tg) => {
+  return await tgs.obtenerTGSinConsejoEscuelaRealizaTG();
+} 
+
+export const obtenerTGSinTutorAsignadoRealizaTG = async (id_tg) => {
+  return await tgs.obtenerTGSinTutorAsignadoRealizaTG();
+} 
+
+export const obtenerTGSinJuradoAsignadoRealizaTG = async (id_tg) => {
+  return await tgs.obtenerTGSinJuradoAsignadoRealizaTG();
+} 
