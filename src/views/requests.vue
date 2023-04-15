@@ -26,7 +26,7 @@ let btnFiltradoModalidad = ref(false);
 
 const showPlanillaUpDe = ref(false);
 const showPlanillaCreate = ref(false);
-const actualizarLista = ref(false);
+
 const tituloParaFiltrar = ref(null);
 const cedulaParaFiltrar = ref(null);
 const modalidadParaFiltrar = ref(null);
@@ -84,6 +84,7 @@ const filtrarListaCedulaEstudiante = ()=>{
   cedulaParaFiltrar.value = '';
   return;
 }
+
 const filtrarListaModalidad = (modalidad)=>{
   console.log("Modalidad para filtrar");
   console.log("Modalidad: " + modalidadParaFiltrar.value);
@@ -183,7 +184,6 @@ async function eliminarPlanilla() {
 onMounted(async () => {
   await pedirData();
   console.log(await api.obtenerEstudiantesRealizaTG());
-  dataFiltrada.value = data.value;
   dataFiltradaRealizaCedula.value = await api.obtenerEstudiantesRealizaTG();
 });
 
@@ -192,6 +192,7 @@ onMounted(async () => {
 
 <template>
   <div class="request">
+    <h1>Propuestas</h1>
     <div class="request__container__display__controllers">
       <button @click="showFiltradoCedula()">
         <ion-icon name="person-circle-outline"></ion-icon>Buscar Estudiante
