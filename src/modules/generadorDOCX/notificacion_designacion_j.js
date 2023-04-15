@@ -43,88 +43,161 @@ const sin_bordes = {
         color: "ff0000",
     }
 }
+let flag = 1;
+let alumnoCounter= 1;
 const generarFilaDatosAlumno = (alumno,titulo,tutor,jurado1,jurado2) => {
     console.log("generarFilaDatosAlumno()");
     if( alumno != undefined && alumno != null && tutor !== undefined){
-        console.log(alumno);
-        console.log(tutor);
-        let filaAlumno = new TableRow({
-            children: [
-                new TableCell({
-                    children: [
-                        new Paragraph({
-                            children: [
-                                new TextRun({
-                                    text: alumno.apellidos + ', ' + alumno.nombres
-                                })
-                            ],
-                            style: "aside"
-                        })
-                    ]
-                }),
-                new TableCell({
-                    children: [
-                        new Paragraph({
-                            children: [
-                                new TextRun({
-                                    text: alumno.cedula
-                                })
-                            ],
-                            style: "aside"
-                        })
-                    ]
-                }),
-                new TableCell({
-                    children: [
-                        new Paragraph({
-                            children: [
-                                new TextRun({
-                                    text: titulo
-                                })
-                            ],
-                            style: "aside"
-                        })
-                    ]
-                }),
-                new TableCell({
-                    children: [
-                        new Paragraph({
-                            children: [
-                                new TextRun({
-                                    text: tutor.apellidos + ', ' + tutor.nombres
-                                })
-                            ],
-                            style: "aside"
-                        })
-                    ]
-                }),
-                new TableCell({
-                    children: [
-                        new Paragraph({
-                            children: [
-                                new TextRun({
-                                    text: jurado1.apellidos + ', ' + jurado1.nombres
-                                })
-                            ],
-                            style: "aside"
-                        })
-                    ]
-                }),
-                new TableCell({
-                    children: [
-                        new Paragraph({
-                            children: [
-                                new TextRun({
-                                    text: jurado2.apellidos + ', ' + jurado2.nombres
-                                })
-                            ],
-                            style: "aside"
-                        })
-                    ]
-                }),
-            ]
-        });
-        return filaAlumno
+        let celdaTutor1 = null;
+        let celdaTitulo = null;
+        let celdaJurado1 = null;
+        let celdaJurado2 = null;
+        if(alumnoCounter == 1){
+            celdaTitulo = new TableCell({
+                                rowSpan: 2,
+                                children: [
+                                    new Paragraph({
+                                        children: [
+                                            new TextRun({
+                                                text: titulo
+                                            })
+                                        ],
+                                        style: "aside"
+                                    })
+                                ]
+                            });
+            celdaTutor1 = new TableCell({
+                                rowSpan: 2,
+                                children: [
+                                    new Paragraph({
+                                        children: [
+                                            new TextRun({
+                                                text: tutor.apellidos + ', ' + tutor.nombres
+                                            })
+                                        ],
+                                        style: "aside"
+                                    })
+                                ]
+                            });
+            celdaJurado1 = new TableCell({
+                                rowSpan: 2,
+                                children: [
+                                    new Paragraph({
+                                        children: [
+                                            new TextRun({
+                                                text: jurado1.apellidos + ', ' + jurado1.nombres
+                                            })
+                                        ],
+                                        style: "aside"
+                                    })
+                                ]
+                            });
+            celdaJurado2 = new TableCell({
+                                rowSpan: 2,
+                                children: [
+                                    new Paragraph({
+                                        children: [
+                                            new TextRun({
+                                                text: jurado2.apellidos + ', ' + jurado2.nombres
+                                            })
+                                        ],
+                                        style: "aside"
+                                    })
+                                ]
+                            })
+        }else{
+            celdaTitulo = new TableCell({
+                                borders: sin_bordes,
+                                children: [
+                                    new Paragraph({
+                                        children: [
+                                            new TextRun({
+                                                text: ""
+                                            })
+                                        ],
+                                        style: "aside"
+                                    })
+                                ]
+                            });
+            celdaTutor1 = new TableCell({
+                                borders: sin_bordes,
+                                children: [
+                                    new Paragraph({
+                                        children: [
+                                            new TextRun({
+                                                text: ""
+                                            })
+                                        ],
+                                        style: "aside"
+                                    })
+                                ]
+                            });
+            celdaJurado1 = new TableCell({
+                                borders: sin_bordes,
+                                children: [
+                                    new Paragraph({
+                                        children: [
+                                            new TextRun({
+                                                text: ""
+                                            })
+                                        ],
+                                        style: "aside"
+                                    })
+                                ]
+                            });
+            celdaJurado2 = new TableCell({
+                                borders: sin_bordes,
+                                children: [
+                                    new Paragraph({
+                                        children: [
+                                            new TextRun({
+                                                text: ""
+                                            })
+                                        ],
+                                        style: "aside"
+                                    })
+                                ]
+                            });
+        } 
+        
+        if(alumnoCounter <= 2){
+            console.log(alumno);
+            console.log(tutor);
+            let filaAlumno = new TableRow({
+                children: [
+                    new TableCell({
+                        children: [
+                            new Paragraph({
+                                children: [
+                                    new TextRun({
+                                        text: alumno.apellidos + ', ' + alumno.nombres
+                                    })
+                                ],
+                                style: "aside"
+                            })
+                        ]
+                    }),
+                    new TableCell({
+                        children: [
+                            new Paragraph({
+                                children: [
+                                    new TextRun({
+                                        text: alumno.cedula
+                                    })
+                                ],
+                                style: "aside"
+                            })
+                        ]
+                    }),
+                    celdaTitulo,
+                    celdaTutor1,
+                    celdaJurado1,
+                    celdaJurado2,
+                ]
+            });
+            alumnoCounter = alumnoCounter + 1;
+            return filaAlumno
+        }
     }
     let filaAlumno = new TableRow({
                                 children: [

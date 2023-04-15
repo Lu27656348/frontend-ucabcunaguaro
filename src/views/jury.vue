@@ -134,6 +134,7 @@ const designarJurado = async (profesores, id_tg) => {
   notificacion.value.cde = await api.obtenerCDEById(cde.value);
 
   /* La función crearJurado designa todos los jurados del trabajo de grado */
+
   await api.crearJurados(profesoresDesignados.value, id_tg);
   await api.designarCDEJurado(id_tg, cde.value, planilla.value.observaciones);
 
