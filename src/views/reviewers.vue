@@ -10,8 +10,6 @@ let dataPropuestas = reactive([]);
 let dataFiltrada = reactive([]);
 let dataFiltradaRealizaCedula = reactive([]);
 
-//control de formulario de designacion
-let showDesignarTutor = ref(false);
 
 //Lista de comites en bdd
 let profesoresADesignar = ref([]);
