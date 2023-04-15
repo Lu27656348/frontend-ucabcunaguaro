@@ -158,14 +158,13 @@ const designarTutor = async () => {
     planillaDesignacionDeRevisor.añadirAlumno(alumnos[0]);
     planillaDesignacionDeRevisor.imprimir();
   }
-  dataPropuestasPorRevisor.value = await api.obtenerPropuestaSinRevisor();
   formularioPropuesta.value = new PropuestaTg();
+  await pedirData();
 };
 
 const pedirData = async () => {
-  dataPropuestas.value = await api.obtenerPropuestas("PR");
-  dataFiltradaRealizaCedula.value =
-    await api.obtenerEstudiantesSinRevisorRealizaTG();
+  dataPropuestas.value = await api.obtenerPropuestaSinRevisor();
+  dataFiltradaRealizaCedula.value = await api.obtenerEstudiantesSinRevisorRealizaTG();
   dataFiltrada.value = dataPropuestas.value;
   profesoresADesignar.value = await api.obtenerProfesores();
 };
