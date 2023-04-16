@@ -232,6 +232,7 @@ onMounted(async () => {
               class="estudiantesTg"
               v-for="e in planilla.alumnos"
               :key="e.cedula"
+              style="margin-bottom: 15px;"
             >
               <p>{{ e.nombres + " " + e.apellidos }}</p>
               <input
@@ -241,7 +242,7 @@ onMounted(async () => {
                 :disabled="planilla.id_tg == ''"
                 v-model="e.nota"
               />
-              <p>{{ e.nota }}</p>
+              <p>Nota seleccionada: {{ e.nota }}</p>
             </div>
             <p>Fecha de entrega del Informe Final</p>
             <input
@@ -257,10 +258,11 @@ onMounted(async () => {
               :disabled="planilla.id_tg == ''"
               v-model="planilla.fecha_defensa"
             />
-            <p>Mencion</p>
+            <p v-show="planilla.alumnos.length > 0? planilla.alumnos[0].nota > 18? true: false : ''">Mencion</p>
             <select
               name="mencion"
               id=""
+              v-show="planilla.alumnos.length > 0? planilla.alumnos[0].nota > 18? true: false : ''"
               v-model="planilla.mencion"
               :disabled="planilla.id_tg == ''"
             >

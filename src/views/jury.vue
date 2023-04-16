@@ -235,6 +235,7 @@ onMounted(async () => {
             type="text"
             placeholder="Id TG"
             v-model="planilla.id_tg_formateado"
+            disabled
           />
           <textarea
             disabled
