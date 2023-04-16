@@ -260,6 +260,7 @@ onMounted(async () => {
                 @click="aceptarTG(formularioPropuesta.id_tg)"
                 :disabled="
                   formularioPropuesta.id_cde == '' ||
+                  formularioPropuesta.id_cde == undefined ||
                   formularioPropuesta.titulo == '' 
                 "
               >
@@ -268,9 +269,10 @@ onMounted(async () => {
               <button
                 class="cancel"
                 @click="rechazarTG(formularioPropuesta.id_tg)"
+                
                 :disabled="
-                  formularioPropuesta.id_cde == '' ||
                   formularioPropuesta.id_cde === undefined ||
+                  formularioPropuesta.id_cde == '' ||
                   formularioPropuesta.id_cde == null ||
                   formularioPropuesta.titulo == '' ||
                   formularioPropuesta.observaciones_consejo == '' ||
