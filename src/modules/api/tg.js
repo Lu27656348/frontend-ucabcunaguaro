@@ -361,3 +361,29 @@ export const obtenerTGSinJuradoAsignadoRealizaTG = async () => {
   const respuesta = await trabajos.json()
   return respuesta;
 }
+
+export const crearAdministradores = async (administrador) => {
+  const trabajos = await fetch(domain_url_env+'/Administradores',{
+    method: 'POST',
+    mode: 'cors',
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(administrador)
+  });
+  const respuesta = await trabajos.json()
+  return respuesta;
+}
+
+export const actualizarAdministradores = async () => {
+  const trabajos = await fetch(domain_url_env+'/actualizarAdministradores',{
+    method: 'PUT',
+    mode: 'cors',
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(administrador)
+  });
+  const respuesta = await trabajos.json()
+  return respuesta;
+}

@@ -416,3 +416,13 @@ export const obtenerTGSinTutorAsignadoRealizaTG = async (id_tg) => {
 export const obtenerTGSinJuradoAsignadoRealizaTG = async (id_tg) => {
   return await tgs.obtenerTGSinJuradoAsignadoRealizaTG();
 } 
+
+export const crearAdministradores = async (id_tg) => {
+  return await tgs.crearAdministradores();
+} 
+
+
+export const actualizarAdministradores = async (id_tg) => {
+  return await tgs.actualizarAdministradores();
+} 
+
