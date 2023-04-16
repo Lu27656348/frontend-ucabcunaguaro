@@ -71,8 +71,10 @@ onMounted(async () => {
                   administrador.apellidos === '' ||
                   administrador.nombres === '' ||
                   administrador.id === '' ||
-                  administrador.password == '' ||
-                  administrador.password.length < 8
+                  administrador.password === '' ||
+                  administrador.confirmPassword ==='' ||
+                  administrador.password.length < 8 ||
+                  administrador.confirmPassword !== administrador.password
                 "
               >
                 Añadir Administrador
