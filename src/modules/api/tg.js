@@ -375,7 +375,7 @@ export const crearAdministradores = async (administrador) => {
   return respuesta;
 }
 
-export const actualizarAdministradores = async () => {
+export const actualizarAdministradores = async (administrador) => {
   const trabajos = await fetch(domain_url_env+'/actualizarAdministradores',{
     method: 'PUT',
     mode: 'cors',
