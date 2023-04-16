@@ -272,12 +272,12 @@ onMounted(async () => {
                 :disabled="
                   planilla.alumnos.length == 0
                     ? true
-                    : planilla.alumnos[0].nota < 18 ||
-                      planilla.alumnos[0].nota < 18 ||
+                    : planilla.alumnos[0].nota < 19 ||
+                      planilla.alumnos[0].nota < 19 ||
                       planilla.alumnos.length == 1
                     ? false
-                    : planilla.alumnos[1].nota < 18 ||
-                      planilla.alumnos[1].nota < 18
+                    : planilla.alumnos[1].nota < 19 ||
+                      planilla.alumnos[1].nota < 19
                 "
               >
                 Honorifica
@@ -287,12 +287,12 @@ onMounted(async () => {
                 :disabled="
                   planilla.alumnos.length == 0
                     ? true
-                    : planilla.alumnos[0].nota < 19 ||
-                      planilla.alumnos[0].nota < 19 ||
+                    : planilla.alumnos[0].nota < 20 ||
+                      planilla.alumnos[0].nota < 20 ||
                       planilla.alumnos.length == 1
                     ? false
-                    : planilla.alumnos[1].nota < 19 ||
-                      planilla.alumnos[1].nota < 19
+                    : planilla.alumnos[1].nota < 20 ||
+                      planilla.alumnos[1].nota < 20
                 "
               >
                 Publicacion
@@ -300,6 +300,7 @@ onMounted(async () => {
             </select>
             <textarea
               v-if="!planilla.mencion == ''"
+              v-show="planilla.alumnos.length > 0? planilla.alumnos[0].nota > 18? true: false : ''"
               maxlength="200"
               class="request__container__preview__form__inputs--titulo-tg"
               placeholder="Razon de la mencion"
