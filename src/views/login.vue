@@ -23,8 +23,11 @@ const extraerDatosLogin = async () => {
   console.log("Cedula: ", cedula.value);
   console.log("Contraseña: ", password.value);
   const usuario = await api.buscarAdministradores(cedula.value.toString(),password.value.toString())
+  console.log(usuario)
   if(usuario != null && usuario != undefined){
     props.iniciarSesion();
+  }else{
+    console.log("No se encontro usuario")
   }
   await limpiarCampos();
   console.log(usuario);

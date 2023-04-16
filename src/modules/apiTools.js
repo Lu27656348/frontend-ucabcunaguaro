@@ -259,16 +259,18 @@ export const designarCDEJurado = async (id_tg , id_cde,observaciones_cde_j) => {
   return;
 };
 
-export const buscarAdministradores = async (cedula) => {
+export const buscarAdministradores = async (cedula,contrasena) => {
   try {
+    
     const respuesta = await fetch(domain_url_env+'/Administradores',{
       method: 'PUT',
-      mode: 'cors',
+      mode: 'cors', 
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        cedula: cedula
+        cedula: cedula,
+        contrasena: contrasena
       })
     })
     const resultado = await respuesta.json();
