@@ -309,7 +309,8 @@ onMounted(async () => {
                   p.cedula != profesoresDesignados[0] &&
                   p.cedula != profesoresDesignados[1] &&
                   p.cedula != profesoresDesignados[2] &&
-                  p.cedula != profesoresDesignados[3]
+                  p.cedula != profesoresDesignados[3] &&
+                  p.cedula != planilla.id_tutor_academico
                     ? 'display: inline'
                     : 'display: none'
                 "

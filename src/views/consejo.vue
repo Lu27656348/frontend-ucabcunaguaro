@@ -107,6 +107,7 @@ const clickenComponente = async (id) => {
   console.log(id);
   formularioPropuesta.value = await api.obtenerTGById(id);
   console.log(formularioPropuesta);
+  console.log(formularioPropuesta.value.id_cde);
 };
 
 const rechazarTG = async (id) => {
@@ -269,6 +270,8 @@ onMounted(async () => {
                 @click="rechazarTG(formularioPropuesta.id_tg)"
                 :disabled="
                   formularioPropuesta.id_cde == '' ||
+                  formularioPropuesta.id_cde === undefined ||
+                  formularioPropuesta.id_cde == null ||
                   formularioPropuesta.titulo == '' ||
                   formularioPropuesta.observaciones_consejo == '' ||
                   formularioPropuesta.observaciones_consejo == undefined
