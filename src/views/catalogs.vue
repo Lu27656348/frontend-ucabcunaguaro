@@ -16,6 +16,9 @@ console.log("Estoy corriendo");
         <ul class="committe__container__display__list">
           <!-- Aqui va el registro para las propuestas de trabajo de grado -->
           <li class="request__container__display__list__record">
+            <router-link to="/catalogs/admins"><ion-icon name="book-outline"></ion-icon> Administradores</router-link>
+          </li>
+          <li class="request__container__display__list__record">
             <router-link to="/catalogs/estudiantes"><ion-icon name="book-outline"></ion-icon> Estudiantes</router-link>
           </li>
           <li class="request__container__display__list__record"   >

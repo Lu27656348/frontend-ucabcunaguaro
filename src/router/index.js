@@ -19,7 +19,8 @@ const router = createRouter({
     { path: '/catalogs/empresas', name: 'catalogs-empresas', component: ()=> import('../views/catalogs-empresas.vue') },
     { path: '/catalogs/externos', name: 'catalogs-externos', component: ()=> import('../views/catalogs-externos.vue') },
     { path: '/catalogs/consejo', name: 'catalogs-consejo', component: ()=> import('../views/catalogs-consejo.vue') },
-    { path: '/catalogs/comite', name: 'catalogs-comite', component: ()=> import('../views/catalogs-comite.vue') }
+    { path: '/catalogs/comite', name: 'catalogs-comite', component: ()=> import('../views/catalogs-comite.vue') },
+    { path: '/catalogs/admins', name: 'catalogs-admins', component: ()=> import('../views/catalogs-administradores.vue') }
   ]
 });
 
