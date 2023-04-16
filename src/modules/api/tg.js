@@ -387,3 +387,17 @@ export const actualizarAdministradores = async (administrador) => {
   const respuesta = await trabajos.json()
   return respuesta;
 }
+
+
+export const obtenerAdministradores = async () => {
+  const trabajos = await fetch(domain_url_env+'/Administradores');
+  const respuesta = await trabajos.json()
+  return respuesta;
+}
+
+
+export const obtenerAdministradoresSinProfesor = async (administrador) => {
+  const trabajos = await fetch(domain_url_env+'/AdministradoresSinProfesor');
+  const respuesta = await trabajos.json()
+  return respuesta;
+}

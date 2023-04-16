@@ -426,3 +426,11 @@ export const actualizarAdministradores = async (administrador) => {
   return await tgs.actualizarAdministradores(administrador);
 } 
 
+export const obtenerAdministradores = async () => {
+  return await tgs.obtenerAdministradores();
+} 
+
+export const obtenerAdministradoresSinProfesor = async () => {
+  return await tgs.obtenerAdministradoresSinProfesor();
+} 
+
