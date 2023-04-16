@@ -179,6 +179,11 @@ const clickenComponente = async (id) => {
     notificacion.value.tutor_empresarial = null;
   }
   notificacion.value.tg = planilla.value;
+  profesoresDesignados[0] = '';
+  profesoresDesignados[1] = '';
+  profesoresDesignados[2] = '';
+  profesoresDesignados[3] = '';
+  console.log(planilla.value.id_tutor_academico);
 };
 
 const pedirData = async () => {
@@ -255,7 +260,8 @@ onMounted(async () => {
                   p.cedula != profesoresDesignados[0] &&
                   p.cedula != profesoresDesignados[1] &&
                   p.cedula != profesoresDesignados[2] &&
-                  p.cedula != profesoresDesignados[3]
+                  p.cedula != profesoresDesignados[3] &&
+                  p.cedula != planilla.id_tutor_academico
                     ? 'display: inline'
                     : 'display: none'
                 "
@@ -273,7 +279,8 @@ onMounted(async () => {
                   p.cedula != profesoresDesignados[0] &&
                   p.cedula != profesoresDesignados[1] &&
                   p.cedula != profesoresDesignados[2] &&
-                  p.cedula != profesoresDesignados[3]
+                  p.cedula != profesoresDesignados[3] &&
+                  p.cedula != planilla.id_tutor_academico
                     ? 'display: inline'
                     : 'display: none'
                 "
@@ -288,12 +295,13 @@ onMounted(async () => {
                 :key="p.cedula"
                 :value="p.cedula"
                 :style="
-                  p.cedula == profesoresDesignados[0] ||
-                  p.cedula == profesoresDesignados[1] ||
-                  p.cedula == profesoresDesignados[2] ||
-                  p.cedula == profesoresDesignados[3]
-                    ? 'display: none;'
-                    : 'display: inline;'
+                  p.cedula != profesoresDesignados[0] &&
+                  p.cedula != profesoresDesignados[1] &&
+                  p.cedula != profesoresDesignados[2] &&
+                  p.cedula != profesoresDesignados[3] &&
+                  p.cedula != planilla.id_tutor_academico
+                    ? 'display: inline;'
+                    : 'display: none;'
                 "
               >
                 {{ p.nombres + "" + p.apellidos }}
