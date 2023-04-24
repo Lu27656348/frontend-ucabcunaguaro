@@ -4,7 +4,7 @@ console.log("Estoy corriendo");
 </script>
 <template>
   <div class="request">
-    <h1>Consejo de escuela</h1>
+    <h1>Catálogos</h1>
     <div class="committe__container">
       <div class="committe__container__display">
         <div class="committe__container__display__controllers">

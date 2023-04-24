@@ -502,9 +502,10 @@ onMounted(async () => {
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                width: 100%;
               "
             >
-              <select name="Empresa" id="" v-model="idEmpresaSeleccionada">
+              <select class="request__container__preview__form__inputs--company" name="Empresa" id="" v-model="idEmpresaSeleccionada">
                 <option
                   v-for="t in dataEmpresas.value"
                   :key="t.id_empresa"
@@ -513,7 +514,13 @@ onMounted(async () => {
                   {{ t.nombre }}
                 </option>
               </select>
-              <button @click="crearSolicitudForm.mostrarAddEmpresa()">+</button>
+              <button 
+              style="
+                margin: 0 0 0 5px;
+                height: 35px;
+                width: 20%;
+              "
+              @click="crearSolicitudForm.mostrarAddEmpresa()">+</button>
             </div>
             <input
               type="text"
@@ -573,7 +580,7 @@ onMounted(async () => {
             />
           </div>
           <button
-            class="login__form__btn succes"
+            class="succes"
             :disabled="
               crearEmpresa.nombre == '' ||
               crearEmpresa.direccion == '' ||

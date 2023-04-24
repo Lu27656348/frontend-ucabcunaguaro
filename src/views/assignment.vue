@@ -147,7 +147,7 @@ onMounted(async () => {
 </script>
 <template>
   <div class="request">
-    <h1>Asignacion de Tutor Academico</h1>
+    <h1>Asignación de Tutor Academico</h1>
     <div class="committe__container__display__controllers">
       <button @click="showFiltradoCedula()">
         <ion-icon name="person-circle-outline"></ion-icon>Buscar Estudiante

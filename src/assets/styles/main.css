@@ -563,9 +563,6 @@ button.cancel:active {
 .request__container__preview__form__inputs--titulo-tg,
 .committe__container__preview__form__inputs--titulo-tg {
   margin: 10px 0;
-}
-.request__container__preview .request__container__preview__form__inputs--titulo-tg,
-.committe__container__preview .request__container__preview__form__inputs--titulo-tg {
   resize: none;
   padding: 10px;
   width: 100%;
@@ -575,10 +572,14 @@ button.cancel:active {
   border: 1px solid #ccc;
   box-shadow: 1px 1px 1px #999;
 }
-.request__container__preview .request__container__preview__form__inputs--titulo-tg:disabled,
-.committe__container__preview .request__container__preview__form__inputs--titulo-tg:disabled {
+.request__container__preview__form__inputs--titulo-tg:disabled,
+.committe__container__preview__form__inputs--titulo-tg:disabled {
   background-color: #fdfdfd;
   color: #000;
+}
+.request__container__preview__form__inputs--company,
+.committe__container__preview__form__inputs--company {
+  width: 80%;
 }
 
 /*# sourceMappingURL=main.css.map */

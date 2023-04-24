@@ -173,7 +173,7 @@ onMounted(async () => {
 </script>
 <template>
   <div class="request">
-    <h1>Designacion de Revisor</h1>
+    <h1>Designación de Revisor</h1>
     <div class="committe__container__display__controllers">
       <button @click="showFiltradoCedula()">
         <ion-icon name="person-circle-outline"></ion-icon>Buscar Estudiante
