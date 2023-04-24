@@ -220,6 +220,7 @@ onMounted(async () => {
         <h2>Visualización del documento de solicitud</h2>
         <div class="request__container__preview__form up-de">
           <div class="request__container__preview__form__inputs">
+            <p>Titulo del Trabajo de Grado</p>
             <textarea
               disabled
               maxlength="200"

@@ -250,7 +250,7 @@ onMounted(async () => {
             placeholder="Tutilo de Propuesta TG"
           ></textarea>
           <div class="request__container__preview__form__inputs">
-            <p>J1</p>
+            <p>Jurado 1</p>
             <select name="profesor" id="" v-model="profesoresDesignados[0]">
               <option
                 v-for="p in dataProfesores.value"
@@ -269,7 +269,7 @@ onMounted(async () => {
                 {{ p.nombres + "" + p.apellidos }}
               </option>
             </select>
-            <p>J2</p>
+            <p>Jurado 2</p>
             <select name="profesor" id="" v-model="profesoresDesignados[1]">
               <option
                 v-for="p in dataProfesores.value"
@@ -288,7 +288,7 @@ onMounted(async () => {
                 {{ p.nombres + "" + p.apellidos }}
               </option>
             </select>
-            <p>J1-suplente</p>
+            <p>Jurado 1-suplente</p>
             <select name="profesor" id="" v-model="profesoresDesignados[2]">
               <option
                 v-for="p in dataProfesores.value"
@@ -307,7 +307,7 @@ onMounted(async () => {
                 {{ p.nombres + "" + p.apellidos }}
               </option>
             </select>
-            <p>J2-suplente</p>
+            <p>Jurado 2-suplente</p>
             <select name="profesor" id="" v-model="profesoresDesignados[3]">
               <option
                 v-for="p in dataProfesores.value"
